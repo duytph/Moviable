@@ -1,0 +1,36 @@
+{
+  "configurations" : [
+    {
+      "id" : "18244039-ADEB-4D1F-99D6-7B57D41C469B",
+      "name" : "Configuration 1",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "codeCoverage" : false,
+    "targetForVariableExpansion" : {
+      "containerPath" : "container:Movieable.xcodeproj",
+      "identifier" : "969547FD25278C1F009A67DE",
+      "name" : "Movieable"
+    }
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:Movieable.xcodeproj",
+        "identifier" : "9695481325278C20009A67DE",
+        "name" : "MovieableTests"
+      }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:Movieable.xcodeproj",
+        "identifier" : "9695481E25278C20009A67DE",
+        "name" : "MovieableUITests"
+      }
+    }
+  ],
+  "version" : 1
+}
