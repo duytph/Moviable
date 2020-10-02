@@ -77,6 +77,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		963CABE02527976F008E6D79 /* Generated */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Generated;
+			sourceTree = "<group>";
+		};
 		969547F525278C1F009A67DE = {
 			isa = PBXGroup;
 			children = (
@@ -102,9 +109,8 @@
 			isa = PBXGroup;
 			children = (
 				9695483425278C25009A67DE /* App */,
+				963CABE02527976F008E6D79 /* Generated */,
 				9695480F25278C20009A67DE /* Info.plist */,
-				9695480C25278C20009A67DE /* LaunchScreen.storyboard */,
-				9695480725278C1F009A67DE /* Main.storyboard */,
 				9695483925278CA1009A67DE /* Resources */,
 				9695483825278C2F009A67DE /* Scenes */,
 			);
@@ -149,6 +155,8 @@
 		9695483925278CA1009A67DE /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				9695480725278C1F009A67DE /* Main.storyboard */,
+				9695480C25278C20009A67DE /* LaunchScreen.storyboard */,
 				9695480A25278C20009A67DE /* Assets.xcassets */,
 			);
 			path = Resources;
