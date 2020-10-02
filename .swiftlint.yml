@@ -1,0 +1,18 @@
+opt_in_rules:
+    - indentation_width
+    - closure_spacing
+    - sorted_imports
+    - vertical_parameter_alignment_on_call
+    - vertical_parameter_alignment
+    
+disabled_rules:
+    - trailing_whitespace
+    - trailing_newline
+    
+included:
+  - Movieable
+excluded:
+  - MovieableTests
+  - MovieableUITests
+
+line_length: 150
