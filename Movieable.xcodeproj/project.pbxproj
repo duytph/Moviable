@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		963CABEA252798A1008E6D79 /* XCAssets+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 963CABE7252798A1008E6D79 /* XCAssets+Generated.swift */; };
+		963CABEB252798A1008E6D79 /* IB-Segues+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 963CABE8252798A1008E6D79 /* IB-Segues+Generated.swift */; };
+		963CABEC252798A1008E6D79 /* IB-Scenes+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 963CABE9252798A1008E6D79 /* IB-Scenes+Generated.swift */; };
 		9695480225278C1F009A67DE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9695480125278C1F009A67DE /* AppDelegate.swift */; };
 		9695480425278C1F009A67DE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9695480325278C1F009A67DE /* SceneDelegate.swift */; };
 		9695480625278C1F009A67DE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9695480525278C1F009A67DE /* ViewController.swift */; };
@@ -35,6 +38,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		963CABE7252798A1008E6D79 /* XCAssets+Generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "XCAssets+Generated.swift"; sourceTree = "<group>"; };
+		963CABE8252798A1008E6D79 /* IB-Segues+Generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "IB-Segues+Generated.swift"; sourceTree = "<group>"; };
+		963CABE9252798A1008E6D79 /* IB-Scenes+Generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "IB-Scenes+Generated.swift"; sourceTree = "<group>"; };
 		969547FE25278C1F009A67DE /* Movieable.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Movieable.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9695480125278C1F009A67DE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9695480325278C1F009A67DE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -80,6 +86,9 @@
 		963CABE02527976F008E6D79 /* Generated */ = {
 			isa = PBXGroup;
 			children = (
+				963CABE9252798A1008E6D79 /* IB-Scenes+Generated.swift */,
+				963CABE8252798A1008E6D79 /* IB-Segues+Generated.swift */,
+				963CABE7252798A1008E6D79 /* XCAssets+Generated.swift */,
 			);
 			path = Generated;
 			sourceTree = "<group>";
@@ -172,6 +181,7 @@
 				969547FA25278C1F009A67DE /* Sources */,
 				969547FB25278C1F009A67DE /* Frameworks */,
 				969547FC25278C1F009A67DE /* Resources */,
+				963CABF3252798E7008E6D79 /* SwiftGen */,
 			);
 			buildRules = (
 			);
@@ -287,14 +297,38 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		963CABF3252798E7008E6D79 /* SwiftGen */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftGen;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "swiftgen\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		969547FA25278C1F009A67DE /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				963CABEB252798A1008E6D79 /* IB-Segues+Generated.swift in Sources */,
 				9695480625278C1F009A67DE /* ViewController.swift in Sources */,
 				9695480225278C1F009A67DE /* AppDelegate.swift in Sources */,
 				9695480425278C1F009A67DE /* SceneDelegate.swift in Sources */,
+				963CABEA252798A1008E6D79 /* XCAssets+Generated.swift in Sources */,
+				963CABEC252798A1008E6D79 /* IB-Scenes+Generated.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
