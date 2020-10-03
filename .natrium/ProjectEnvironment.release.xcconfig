@@ -1,0 +1,4 @@
+CODE_SIGN_ALLOW_ENTITLEMENTS_MODIFICATION = YES
+DEEPLINK_URL_SCHEME = #{DeeplinkUrlSchemeName}
+ENVIRONMENT = Development
+PRODUCT_BUNDLE_IDENTIFIER = dev.duytph.Movieable.development

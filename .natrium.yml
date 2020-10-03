@@ -1,0 +1,24 @@
+---
+environments:
+  - Development
+  - Staging
+  - Production
+
+xcconfig:
+    PRODUCT_BUNDLE_IDENTIFIER:
+        Development: dev.duytph.Movieable.development
+        Staging: dev.duytph.Movieable.staging
+        Production:
+            Adhoc,Debug: dev.duytph.Movieable.production
+            Release: dev.duytph.Movieable
+    DEEPLINK_URL_SCHEME: "#{DeeplinkUrlSchemeName}"
+
+variables:
+    baseURL: 
+        Development: "https://api.themoviedb.org/4"
+        Staging: "#env(BASE_URL_STAGING)"
+        Production: "#env(BASE_URL_PRODUCTION)"
+    apiKey:
+        Development: "328c283cd27bd1877d9080ccb1604c91"
+        Staging: "#env(API_KEY_STAGING)"
+        Production: "#env(API_KEY_PRODUCTION)"

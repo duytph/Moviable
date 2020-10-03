@@ -17,6 +17,7 @@
 		9678FAD6252857C600ADB3A5 /* LoadableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9678FAD5252857C600ADB3A5 /* LoadableTests.swift */; };
 		9678FADC2528590400ADB3A5 /* StubError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9678FADB2528590400ADB3A5 /* StubError.swift */; };
 		9678FAEC25285DE500ADB3A5 /* StatefulView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9678FAEB25285DE500ADB3A5 /* StatefulView.swift */; };
+		967AA3AC2528BF4000DEB8C1 /* Natrium.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967AA3AB2528BF4000DEB8C1 /* Natrium.swift */; };
 		9695480225278C1F009A67DE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9695480125278C1F009A67DE /* AppDelegate.swift */; };
 		9695480425278C1F009A67DE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9695480325278C1F009A67DE /* SceneDelegate.swift */; };
 		9695480625278C1F009A67DE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9695480525278C1F009A67DE /* ViewController.swift */; };
@@ -58,6 +59,7 @@
 		9678FAD5252857C600ADB3A5 /* LoadableTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadableTests.swift; sourceTree = "<group>"; };
 		9678FADB2528590400ADB3A5 /* StubError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StubError.swift; sourceTree = "<group>"; };
 		9678FAEB25285DE500ADB3A5 /* StatefulView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatefulView.swift; sourceTree = "<group>"; };
+		967AA3AB2528BF4000DEB8C1 /* Natrium.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Natrium.swift; path = .natrium/Natrium.swift; sourceTree = SOURCE_ROOT; };
 		969547FE25278C1F009A67DE /* Movieable.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Movieable.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9695480125278C1F009A67DE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9695480325278C1F009A67DE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -106,6 +108,7 @@
 		963CABE02527976F008E6D79 /* Generated */ = {
 			isa = PBXGroup;
 			children = (
+				967AA3AB2528BF4000DEB8C1 /* Natrium.swift */,
 				963CABE9252798A1008E6D79 /* IB-Scenes+Generated.swift */,
 				963CABE8252798A1008E6D79 /* IB-Segues+Generated.swift */,
 				963CABE7252798A1008E6D79 /* XCAssets+Generated.swift */,
@@ -408,6 +411,7 @@
 				963CAC5B2527A177008E6D79 /* StateMachine.swift in Sources */,
 				963CAC632527A242008E6D79 /* StateMachineViewProvider.swift in Sources */,
 				9695480225278C1F009A67DE /* AppDelegate.swift in Sources */,
+				967AA3AC2528BF4000DEB8C1 /* Natrium.swift in Sources */,
 				9695480425278C1F009A67DE /* SceneDelegate.swift in Sources */,
 				963CABEA252798A1008E6D79 /* XCAssets+Generated.swift in Sources */,
 				963CABEC252798A1008E6D79 /* IB-Scenes+Generated.swift in Sources */,
