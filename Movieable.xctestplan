@@ -9,7 +9,15 @@
     }
   ],
   "defaultOptions" : {
-    "codeCoverage" : false,
+    "codeCoverage" : {
+      "targets" : [
+        {
+          "containerPath" : "container:Movieable.xcodeproj",
+          "identifier" : "969547FD25278C1F009A67DE",
+          "name" : "Movieable"
+        }
+      ]
+    },
     "targetForVariableExpansion" : {
       "containerPath" : "container:Movieable.xcodeproj",
       "identifier" : "969547FD25278C1F009A67DE",
