@@ -22,7 +22,10 @@ internal typealias AssetImageTypeAlias = ImageAsset.Image
 // swiftlint:disable identifier_name line_length nesting type_body_length type_name
 internal enum Asset {
   internal static let accentColor = ColorAsset(name: "AccentColor")
+  internal static let empty = ImageAsset(name: "Empty")
+  internal static let error = ImageAsset(name: "Error")
   internal static let launchScreen = ImageAsset(name: "LaunchScreen")
+  internal static let loading = ImageAsset(name: "Loading")
 }
 // swiftlint:enable identifier_name line_length nesting type_body_length type_name
 
@@ -78,7 +81,8 @@ internal struct ImageAsset {
     #if os(iOS) || os(tvOS)
     let image = Image(named: name, in: bundle, compatibleWith: nil)
     #elseif os(macOS)
-    let image = bundle.image(forResource: NSImage.Name(name))
+    let name = NSImage.Name(self.name)
+    let image = (bundle == .main) ? NSImage(named: name) : bundle.image(forResource: name)
     #elseif os(watchOS)
     let image = Image(named: name)
     #endif

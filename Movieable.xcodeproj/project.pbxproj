@@ -10,6 +10,13 @@
 		963CABEA252798A1008E6D79 /* XCAssets+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 963CABE7252798A1008E6D79 /* XCAssets+Generated.swift */; };
 		963CABEB252798A1008E6D79 /* IB-Segues+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 963CABE8252798A1008E6D79 /* IB-Segues+Generated.swift */; };
 		963CABEC252798A1008E6D79 /* IB-Scenes+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 963CABE9252798A1008E6D79 /* IB-Scenes+Generated.swift */; };
+		963CAC4925279FE3008E6D79 /* Loadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 963CAC4825279FE3008E6D79 /* Loadable.swift */; };
+		963CAC532527A112008E6D79 /* Emptiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 963CAC522527A112008E6D79 /* Emptiable.swift */; };
+		963CAC5B2527A177008E6D79 /* StateMachine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 963CAC5A2527A177008E6D79 /* StateMachine.swift */; };
+		963CAC632527A242008E6D79 /* StateMachineViewProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 963CAC622527A242008E6D79 /* StateMachineViewProvider.swift */; };
+		9678FAD6252857C600ADB3A5 /* LoadableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9678FAD5252857C600ADB3A5 /* LoadableTests.swift */; };
+		9678FADC2528590400ADB3A5 /* StubError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9678FADB2528590400ADB3A5 /* StubError.swift */; };
+		9678FAEC25285DE500ADB3A5 /* StatefulView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9678FAEB25285DE500ADB3A5 /* StatefulView.swift */; };
 		9695480225278C1F009A67DE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9695480125278C1F009A67DE /* AppDelegate.swift */; };
 		9695480425278C1F009A67DE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9695480325278C1F009A67DE /* SceneDelegate.swift */; };
 		9695480625278C1F009A67DE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9695480525278C1F009A67DE /* ViewController.swift */; };
@@ -18,6 +25,9 @@
 		9695480E25278C20009A67DE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9695480C25278C20009A67DE /* LaunchScreen.storyboard */; };
 		9695481925278C20009A67DE /* MovieableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9695481825278C20009A67DE /* MovieableTests.swift */; };
 		9695482425278C20009A67DE /* MovieableUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9695482325278C20009A67DE /* MovieableUITests.swift */; };
+		969BC5CE25289FFC00736D0F /* StateMachineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 969BC5CD25289FFC00736D0F /* StateMachineTests.swift */; };
+		969BC5D32528A04600736D0F /* SpyStateMachineViewProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 969BC5D22528A04600736D0F /* SpyStateMachineViewProvider.swift */; };
+		96B6D6EC2528B170003CA4D7 /* StatefulViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B6D6EB2528B170003CA4D7 /* StatefulViewTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,6 +51,13 @@
 		963CABE7252798A1008E6D79 /* XCAssets+Generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "XCAssets+Generated.swift"; sourceTree = "<group>"; };
 		963CABE8252798A1008E6D79 /* IB-Segues+Generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "IB-Segues+Generated.swift"; sourceTree = "<group>"; };
 		963CABE9252798A1008E6D79 /* IB-Scenes+Generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "IB-Scenes+Generated.swift"; sourceTree = "<group>"; };
+		963CAC4825279FE3008E6D79 /* Loadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Loadable.swift; sourceTree = "<group>"; };
+		963CAC522527A112008E6D79 /* Emptiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Emptiable.swift; sourceTree = "<group>"; };
+		963CAC5A2527A177008E6D79 /* StateMachine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateMachine.swift; sourceTree = "<group>"; };
+		963CAC622527A242008E6D79 /* StateMachineViewProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateMachineViewProvider.swift; sourceTree = "<group>"; };
+		9678FAD5252857C600ADB3A5 /* LoadableTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadableTests.swift; sourceTree = "<group>"; };
+		9678FADB2528590400ADB3A5 /* StubError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StubError.swift; sourceTree = "<group>"; };
+		9678FAEB25285DE500ADB3A5 /* StatefulView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatefulView.swift; sourceTree = "<group>"; };
 		969547FE25278C1F009A67DE /* Movieable.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Movieable.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9695480125278C1F009A67DE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9695480325278C1F009A67DE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -56,6 +73,9 @@
 		9695482325278C20009A67DE /* MovieableUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieableUITests.swift; sourceTree = "<group>"; };
 		9695482525278C20009A67DE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9695483D25278D38009A67DE /* Movieable.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = Movieable.xctestplan; sourceTree = "<group>"; };
+		969BC5CD25289FFC00736D0F /* StateMachineTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateMachineTests.swift; sourceTree = "<group>"; };
+		969BC5D22528A04600736D0F /* SpyStateMachineViewProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpyStateMachineViewProvider.swift; sourceTree = "<group>"; };
+		96B6D6EB2528B170003CA4D7 /* StatefulViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatefulViewTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +113,35 @@
 			path = Generated;
 			sourceTree = "<group>";
 		};
+		963CAC4725279FD8008E6D79 /* Ultilities */ = {
+			isa = PBXGroup;
+			children = (
+				9678FAE925285DC400ADB3A5 /* StateMachine */,
+			);
+			path = Ultilities;
+			sourceTree = "<group>";
+		};
+		9678FADA2528584D00ADB3A5 /*  TestDouble */ = {
+			isa = PBXGroup;
+			children = (
+				9678FADB2528590400ADB3A5 /* StubError.swift */,
+				969BC5D22528A04600736D0F /* SpyStateMachineViewProvider.swift */,
+			);
+			path = " TestDouble";
+			sourceTree = "<group>";
+		};
+		9678FAE925285DC400ADB3A5 /* StateMachine */ = {
+			isa = PBXGroup;
+			children = (
+				963CAC522527A112008E6D79 /* Emptiable.swift */,
+				963CAC4825279FE3008E6D79 /* Loadable.swift */,
+				9678FAEB25285DE500ADB3A5 /* StatefulView.swift */,
+				963CAC5A2527A177008E6D79 /* StateMachine.swift */,
+				963CAC622527A242008E6D79 /* StateMachineViewProvider.swift */,
+			);
+			path = StateMachine;
+			sourceTree = "<group>";
+		};
 		969547F525278C1F009A67DE = {
 			isa = PBXGroup;
 			children = (
@@ -117,6 +166,7 @@
 		9695480025278C1F009A67DE /* Movieable */ = {
 			isa = PBXGroup;
 			children = (
+				963CAC4725279FD8008E6D79 /* Ultilities */,
 				9695483425278C25009A67DE /* App */,
 				963CABE02527976F008E6D79 /* Generated */,
 				9695480F25278C20009A67DE /* Info.plist */,
@@ -129,8 +179,12 @@
 		9695481725278C20009A67DE /* MovieableTests */ = {
 			isa = PBXGroup;
 			children = (
+				9678FADA2528584D00ADB3A5 /*  TestDouble */,
 				9695481825278C20009A67DE /* MovieableTests.swift */,
 				9695481A25278C20009A67DE /* Info.plist */,
+				9678FAD5252857C600ADB3A5 /* LoadableTests.swift */,
+				969BC5CD25289FFC00736D0F /* StateMachineTests.swift */,
+				96B6D6EB2528B170003CA4D7 /* StatefulViewTests.swift */,
 			);
 			path = MovieableTests;
 			sourceTree = "<group>";
@@ -189,6 +243,8 @@
 			dependencies = (
 			);
 			name = Movieable;
+			packageProductDependencies = (
+			);
 			productName = Movieable;
 			productReference = 969547FE25278C1F009A67DE /* Movieable.app */;
 			productType = "com.apple.product-type.application";
@@ -260,6 +316,8 @@
 				Base,
 			);
 			mainGroup = 969547F525278C1F009A67DE;
+			packageReferences = (
+			);
 			productRefGroup = 969547FF25278C1F009A67DE /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -342,8 +400,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				963CAC532527A112008E6D79 /* Emptiable.swift in Sources */,
 				963CABEB252798A1008E6D79 /* IB-Segues+Generated.swift in Sources */,
+				963CAC4925279FE3008E6D79 /* Loadable.swift in Sources */,
+				9678FAEC25285DE500ADB3A5 /* StatefulView.swift in Sources */,
 				9695480625278C1F009A67DE /* ViewController.swift in Sources */,
+				963CAC5B2527A177008E6D79 /* StateMachine.swift in Sources */,
+				963CAC632527A242008E6D79 /* StateMachineViewProvider.swift in Sources */,
 				9695480225278C1F009A67DE /* AppDelegate.swift in Sources */,
 				9695480425278C1F009A67DE /* SceneDelegate.swift in Sources */,
 				963CABEA252798A1008E6D79 /* XCAssets+Generated.swift in Sources */,
@@ -356,6 +419,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				9695481925278C20009A67DE /* MovieableTests.swift in Sources */,
+				969BC5D32528A04600736D0F /* SpyStateMachineViewProvider.swift in Sources */,
+				9678FAD6252857C600ADB3A5 /* LoadableTests.swift in Sources */,
+				9678FADC2528590400ADB3A5 /* StubError.swift in Sources */,
+				96B6D6EC2528B170003CA4D7 /* StatefulViewTests.swift in Sources */,
+				969BC5CE25289FFC00736D0F /* StateMachineTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
