@@ -12,8 +12,10 @@ extension Array where Element == Networking.Middleware {
     
     static var defaultValue: [Networking.Middleware] {
         [
-            LocalizationMiddleware(),
             DefaultLoggingMiddleware(),
+            LocalizationMiddleware(),
+            DefaultAuthorizationMiddleware.defaultValue,
+            ResponseErrorMiddleware(),
             DefaultCodeValidationMiddleware(),
         ]
     }
