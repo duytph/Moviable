@@ -12,6 +12,7 @@ import Networking
 protocol MovieRepository {
     
     func popular(page: Int) -> AnyPublisher<PaginationResponse<Movie>, Error>
+    func movie(id: Int) -> AnyPublisher<Movie, Error>
 }
 
 struct DefaultMovieRepository: MovieRepository, Repository {
@@ -40,6 +41,11 @@ struct DefaultMovieRepository: MovieRepository, Repository {
     func popular(page: Int) -> AnyPublisher<PaginationResponse<Movie>, Error> {
         return call(to: APIEndpoint.popular(page: page))
     }
+    
+    func movie(id: Int) -> AnyPublisher<Movie, Error> {
+        let endpoint = APIEndpoint.movie(id: id)
+        return call(to: endpoint)
+    }
 }
 
 extension DefaultMovieRepository {
@@ -47,11 +53,14 @@ extension DefaultMovieRepository {
     enum APIEndpoint: Networking.Endpoint {
         
         case popular(page: Int)
+        case movie(id: Int)
         
         var path: String {
             switch self {
             case let .popular(page):
                 return "/movie/popular?page=\(page)"
+            case let .movie(id):
+                return "/movie/\(id)"
             }
         }
         

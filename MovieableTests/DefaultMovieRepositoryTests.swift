@@ -163,4 +163,67 @@ final class DefaultMovieRepositoryTests: XCTestCase {
         
         wait(for: [expectation], timeout: 0.5)
     }
+    
+    func testMovieEncounterError() throws {
+        let expectation = self.expectation(description: "Expect encountering error")
+        session.set(stubbedResponseError: error, for: request)
+        
+        sut
+            .movie(id: 0)
+            .sink(receiveCompletion: { (completion) in
+                switch completion {
+                case .failure:
+                    expectation.fulfill()
+                case .finished:
+                    XCTFail(expectation.description)
+                }
+            }) { (_) in
+                XCTFail(expectation.description)
+            }
+            .store(in: &cancelBag)
+        
+        wait(for: [expectation], timeout: 0.5)
+    }
+    
+    func testMovieEncounterDecodingError() throws {
+        let expectation = self.expectation(description: "Expect encountering decoding error")
+        session.set(stubbedData: "foo".data(using: .utf8), for: request)
+        
+        sut
+            .movie(id: 0)
+            .sink(receiveCompletion: { (completion) in
+                switch completion {
+                case let .failure(error):
+                    XCTAssertTrue(error is DecodingError)
+                    expectation.fulfill()
+                case .finished:
+                    XCTFail(expectation.description)
+                }
+            }) { (_) in
+                XCTFail(expectation.description)
+            }
+            .store(in: &cancelBag)
+        
+        wait(for: [expectation], timeout: 0.5)
+    }
+    
+    func testMovie() throws {
+        let expectation = self.expectation(description: "Expect receiving data")
+        
+        sut
+            .movie(id: 0)
+            .sink(receiveCompletion: { (completion) in
+                switch completion {
+                case .failure:
+                    XCTFail(expectation.description)
+                case .finished:
+                    break
+                }
+            }) { (_) in
+                expectation.fulfill()
+            }
+            .store(in: &cancelBag)
+        
+        wait(for: [expectation], timeout: 0.5)
+    }
 }
