@@ -13,29 +13,26 @@ final class StatefulView: UIView {
     
     private(set) lazy var titleLabel: UILabel = {
         let view = UILabel()
-        view.tintColor = Asset.accentColor.color
+        view.textColor = Asset.accentColor.color
+        view.textAlignment = .center
+        view.numberOfLines = 0
         return view
     }()
     
     private(set) lazy var imageView: UIImageView = {
         let view = UIImageView()
-        view.contentMode = .scaleToFill
+        view.contentMode = .scaleAspectFit
         return view
     }()
     
     private(set) lazy var actionButton: UIButton = {
         let view = UIButton()
-        let halfPadding = padding / 2
-        view.contentEdgeInsets = UIEdgeInsets(
-            top: halfPadding,
-            left: padding,
-            bottom: halfPadding,
-            right: padding)
         view.addTarget(
             self,
             action: #selector(actionButtonDidTap(sender:)),
             for: .touchUpInside)
-        view.tintColor = Asset.accentColor.color
+        view.setTitleColor(Asset.accentColor.color, for: .normal)
+        view.layer.borderColor = Asset.accentColor.color.cgColor
         view.layer.masksToBounds = true
         view.layer.cornerRadius = 8
         view.layer.borderWidth = 1
@@ -112,14 +109,16 @@ final class StatefulView: UIView {
     
     static func loading(
         padding: CGFloat = 16,
-        title: String = NSLocalizedString("A few seconds before happiness", comment: ""),
+        title: String = NSLocalizedString("A few seconds before happiness ...", comment: ""),
         image: UIImage = Asset.loading.image,
         actionTitle: String = "",
         action: (() -> Void)? = nil) -> StatefulView {
-        let view = StatefulView(padding: padding, action: action)
-        view.titleLabel.text = title
-        view.imageView.image = image
-        view.actionButton.setTitle(actionTitle, for: .normal)
+        let view = StatefulView(padding: padding)
+        view.configure(
+            withTitle: title,
+            image: image,
+            actionTitle: actionTitle,
+            action: action)
         return view
     }
     
@@ -129,10 +128,12 @@ final class StatefulView: UIView {
         image: UIImage = Asset.empty.image,
         actionTitle: String = NSLocalizedString("Reload", comment: ""),
         action: (() -> Void)? = nil) -> StatefulView {
-        let view = StatefulView(padding: padding, action: action)
-        view.titleLabel.text = title
-        view.imageView.image = image
-        view.actionButton.setTitle(actionTitle, for: .normal)
+        let view = StatefulView(padding: padding)
+        view.configure(
+            withTitle: title,
+            image: image,
+            actionTitle: actionTitle,
+            action: action)
         return view
     }
 
@@ -142,10 +143,12 @@ final class StatefulView: UIView {
         image: UIImage = Asset.error.image,
         actionTitle: String = NSLocalizedString("Retry", comment: ""),
         action: (() -> Void)? = nil) -> StatefulView {
-        let view = StatefulView(padding: padding, action: action)
-        view.titleLabel.text = title
-        view.imageView.image = image
-        view.actionButton.setTitle(actionTitle, for: .normal)
+        let view = StatefulView(padding: padding)
+        view.configure(
+            withTitle: title,
+            image: image,
+            actionTitle: actionTitle,
+            action: action)
         return view
     }
 }
