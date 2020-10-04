@@ -26,6 +26,7 @@ internal enum Asset {
   internal static let error = ImageAsset(name: "Error")
   internal static let launchScreen = ImageAsset(name: "LaunchScreen")
   internal static let loading = ImageAsset(name: "Loading")
+  internal static let placeholder = ImageAsset(name: "Placeholder")
 }
 // swiftlint:enable identifier_name line_length nesting type_body_length type_name
 
