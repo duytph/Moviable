@@ -8,9 +8,17 @@
 import Combine
 import Foundation
 
-final class PopularMoviesViewModel: DefaultMoviesListViewModel {
+final class PopularMoviesViewModel: MoviesListViewModel {
+    
+    // MARK: - Dependencies
+
+    weak var presenter: MoviesListPresentable?
+    weak var coordinator: MovieListCoordinator?
     
     let movieRepository: MovieRepository
+    let title: String
+    @Published var state: Loadable<[Movie]>
+    var cancelBag = Set<AnyCancellable>()
     
     private var nextPage: Int = 1
     private var totalPages: Int = 1
@@ -20,25 +28,34 @@ final class PopularMoviesViewModel: DefaultMoviesListViewModel {
         title: String = NSLocalizedString("Popular", comment: ""),
         movies: [Movie] = []) {
         self.movieRepository = movieRepository
-        super.init(title: title, movies: movies)
+        self.title = title
+        self.state = .loaded(movies)
     }
     
     // MARK: - MoviesListViewModel
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    func viewDidLoad() {
+        presenter?.title = title
+        $state.sink { [weak presenter] (state: Loadable<[Movie]>) in
+            presenter?.present(state: state)
+        }
+        .store(in: &cancelBag)
         
         refresh()
     }
     
-    override func refresh() {
+    func refresh() {
         nextPage = 1
         totalPages = 1
         fetch(isRefresh: true)
     }
     
-    override func loadMore() {
+    func loadMore() {
         fetch(isRefresh: false)
+    }
+    
+    func didSelect(movie: Movie) {
+        coordinator?.routeToMovieDetail(movie: movie)
     }
     
     // MARK: - Public
