@@ -15,7 +15,7 @@ xcconfig:
 
 variables:
     baseURL: 
-        Development: "https://api.themoviedb.org/4"
+        Development: "https://api.themoviedb.org/3"
         Staging: "#env(BASE_URL_STAGING)"
         Production: "#env(BASE_URL_PRODUCTION)"
     apiKey:
