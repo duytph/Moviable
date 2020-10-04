@@ -28,26 +28,28 @@ final class DefaultMovieRepositoryTests: XCTestCase {
         rawJSON = """
         {
           "page": 1,
+          "total_results": 10000,
+          "total_pages": 500,
           "results": [
             {
-              "poster_path": "/e1mjopzAS2KNsvpbpahQ1a6SkSn.jpg",
-              "adult": false,
-              "overview": "From DC Comics comes the Suicide Squad, an antihero team of incarcerated supervillains who act as deniable assets for the United States government, undertaking high-risk black ops missions in exchange for commuted prison sentences.",
-              "release_date": "2016-08-03",
-              "genre_ids": [
-                14,
-                28,
-                80
-              ],
-              "id": 297761,
-              "original_title": "Suicide Squad",
-              "original_language": "en",
-              "title": "Suicide Squad",
-              "backdrop_path": "/ndlQ2Cuc3cjTL7lTynw6I4boP4S.jpg",
-              "popularity": 48.261451,
-              "vote_count": 1466,
+              "popularity": 2075.72,
+              "vote_count": 1439,
               "video": false,
-              "vote_average": 5.91
+              "poster_path": "/riYInlsq2kf1AWoGm80JQW5dLKp.jpg",
+              "id": 497582,
+              "adult": false,
+              "backdrop_path": "/kMe4TKMDNXTKptQPAdOF0oZHq3V.jpg",
+              "original_language": "en",
+              "original_title": "Enola Holmes",
+              "genre_ids": [
+                80,
+                18,
+                9648
+              ],
+              "title": "Enola Holmes",
+              "vote_average": 7.7,
+              "overview": "While searching for her missing mother, intrepid teen Enola Holmes uses her sleuthing skills to outsmart big brother Sherlock and help a runaway lord.",
+              "release_date": "2020-09-23"
             }
           ]
         }

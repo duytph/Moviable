@@ -16,6 +16,34 @@ protocol MovieRepository {
 
 struct DefaultMovieRepository: MovieRepository, Repository {
     
+    static let shared = DefaultMovieRepository()
+    
+    // MARK: - Dependencies
+    
+    let requestFactory: URLRequestFactory
+    let middlewares: [Middleware]
+    let session: URLSession
+    
+    // MARK: - Init
+    
+    init(
+        requestFactory: URLRequestFactory = DefaultURLRequestFactory.defaultValue,
+        middlewares: [Middleware] = .defaultValue,
+        session: URLSession = .shared) {
+        self.requestFactory = requestFactory
+        self.middlewares = middlewares
+        self.session = session
+    }
+    
+    // MARK: - MovieRepository
+    
+    func popular(page: Int) -> AnyPublisher<PaginationResponse<Movie>, Error> {
+        return call(to: APIEndpoint.popular(page: page))
+    }
+}
+
+extension DefaultMovieRepository {
+    
     enum APIEndpoint: Networking.Endpoint {
         
         case popular(page: Int)
@@ -34,22 +62,5 @@ struct DefaultMovieRepository: MovieRepository, Repository {
         func body() throws -> Data? {
             nil
         }
-    }
-    
-    let requestFactory: URLRequestFactory
-    let middlewares: [Middleware]
-    let session: URLSession
-    
-    init(
-        requestFactory: URLRequestFactory = DefaultURLRequestFactory.defaultValue,
-        middlewares: [Middleware] = .defaultValue,
-        session: URLSession = .shared) {
-        self.requestFactory = requestFactory
-        self.middlewares = middlewares
-        self.session = session
-    }
-    
-    func popular(page: Int) -> AnyPublisher<PaginationResponse<Movie>, Error> {
-        return call(to: APIEndpoint.popular(page: page))
     }
 }
