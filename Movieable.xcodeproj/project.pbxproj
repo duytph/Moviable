@@ -12,7 +12,6 @@
 		960D8C762529C99E00AA50F8 /* RemoteConfigRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960D8C752529C99E00AA50F8 /* RemoteConfigRepository.swift */; };
 		960D8C7B2529C9FC00AA50F8 /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960D8C7A2529C9FC00AA50F8 /* Configuration.swift */; };
 		960D8C802529CA4200AA50F8 /* Images.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960D8C7F2529CA4200AA50F8 /* Images.swift */; };
-		960D8C852529CA7200AA50F8 /* Configuration.json in Resources */ = {isa = PBXBuildFile; fileRef = 960D8C842529CA7200AA50F8 /* Configuration.json */; };
 		960D8C8A2529D53800AA50F8 /* DefaultImageURLFactoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960D8C892529D53800AA50F8 /* DefaultImageURLFactoryTests.swift */; };
 		960D8C8F2529D56900AA50F8 /* SpyRemoteConfigRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960D8C8E2529D56900AA50F8 /* SpyRemoteConfigRepository.swift */; };
 		960D8C972529DFF400AA50F8 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960D8C962529DFF400AA50F8 /* Coordinator.swift */; };
@@ -97,7 +96,6 @@
 		960D8C752529C99E00AA50F8 /* RemoteConfigRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteConfigRepository.swift; sourceTree = "<group>"; };
 		960D8C7A2529C9FC00AA50F8 /* Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
 		960D8C7F2529CA4200AA50F8 /* Images.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Images.swift; sourceTree = "<group>"; };
-		960D8C842529CA7200AA50F8 /* Configuration.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Configuration.json; sourceTree = "<group>"; };
 		960D8C892529D53800AA50F8 /* DefaultImageURLFactoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultImageURLFactoryTests.swift; sourceTree = "<group>"; };
 		960D8C8E2529D56900AA50F8 /* SpyRemoteConfigRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpyRemoteConfigRepository.swift; sourceTree = "<group>"; };
 		960D8C962529DFF400AA50F8 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
@@ -400,7 +398,6 @@
 				9695480725278C1F009A67DE /* Main.storyboard */,
 				9695480C25278C20009A67DE /* LaunchScreen.storyboard */,
 				9695480A25278C20009A67DE /* Assets.xcassets */,
-				960D8C842529CA7200AA50F8 /* Configuration.json */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -520,7 +517,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				960D8C852529CA7200AA50F8 /* Configuration.json in Resources */,
 				9695480E25278C20009A67DE /* LaunchScreen.storyboard in Resources */,
 				9695480B25278C20009A67DE /* Assets.xcassets in Resources */,
 				968A80662529B4EB0033E412 /* MovieTableViewCell.xib in Resources */,
