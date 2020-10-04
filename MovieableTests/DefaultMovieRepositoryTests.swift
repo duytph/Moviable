@@ -12,7 +12,8 @@ import Networking
 
 final class DefaultMovieRepositoryTests: XCTestCase {
     
-    var rawJSON: String!
+    var popularRawJSON: String!
+    var movieRawJSON: String!
     var url: URL!
     var request: URLRequest!
     var response: HTTPURLResponse!
@@ -25,35 +26,19 @@ final class DefaultMovieRepositoryTests: XCTestCase {
     var sut: DefaultMovieRepository!
 
     override func setUpWithError() throws {
-        rawJSON = """
+        popularRawJSON = """
         {
           "page": 1,
           "total_results": 10000,
           "total_pages": 500,
           "results": [
             {
-              "popularity": 2075.72,
-              "vote_count": 1439,
-              "video": false,
-              "poster_path": "/riYInlsq2kf1AWoGm80JQW5dLKp.jpg",
-              "id": 497582,
-              "adult": false,
-              "backdrop_path": "/kMe4TKMDNXTKptQPAdOF0oZHq3V.jpg",
-              "original_language": "en",
-              "original_title": "Enola Holmes",
-              "genre_ids": [
-                80,
-                18,
-                9648
-              ],
-              "title": "Enola Holmes",
-              "vote_average": 7.7,
-              "overview": "While searching for her missing mother, intrepid teen Enola Holmes uses her sleuthing skills to outsmart big brother Sherlock and help a runaway lord.",
-              "release_date": "2020-09-23"
+              "id": 1
             }
           ]
         }
         """
+        movieRawJSON = #"{ "id": 677638 }"#
         url = URL(string: "https://www.apple.com")
         request = URLRequest(url: url)
         response = HTTPURLResponse(
@@ -61,7 +46,7 @@ final class DefaultMovieRepositoryTests: XCTestCase {
             statusCode: 200,
             httpVersion: nil,
             headerFields: nil)
-        data = rawJSON.data(using: .utf8)
+        data = "{}".data(using: .utf8)
         error = StubError()
         requestFactory = SpyURLRequestFactory()
         requestFactory.stubbedMakeResult = request
@@ -80,7 +65,15 @@ final class DefaultMovieRepositoryTests: XCTestCase {
     }
 
     override func tearDownWithError() throws {
+        popularRawJSON = nil
+        movieRawJSON = nil
+        url = nil
+        request = nil
+        response = nil
+        data = nil
+        error = nil
         requestFactory = nil
+        cancelBag = nil
         middlewares = nil
         session = nil
         sut = nil
@@ -145,6 +138,8 @@ final class DefaultMovieRepositoryTests: XCTestCase {
     }
     
     func testPopular() throws {
+        data = popularRawJSON.data(using: .utf8)
+        session.set(stubbedData: data, for: request)
         let expectation = self.expectation(description: "Expect receiving data")
         
         sut
@@ -208,6 +203,8 @@ final class DefaultMovieRepositoryTests: XCTestCase {
     }
     
     func testMovie() throws {
+        data = movieRawJSON.data(using: .utf8)!
+        session.set(stubbedData: data, for: request)
         let expectation = self.expectation(description: "Expect receiving data")
         
         sut
