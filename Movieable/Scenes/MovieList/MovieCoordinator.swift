@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol MovieListCoordinator: Coordinator {
+protocol MovieListCoordinator: MovieDetailCoordinator {
     
     func routeToMovieDetail(movie: Movie)
 }
@@ -16,6 +16,7 @@ extension MovieListCoordinator {
     
     func routeToMovieDetail(movie: Movie) {
         let viewModel = DefaultMovieDetailViewModel(movie: movie)
+        viewModel.coordinator = self
         let viewController = MovieDetailViewController(viewModel: viewModel)
         navigationController.pushViewController(viewController, animated: true)
     }
