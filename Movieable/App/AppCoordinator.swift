@@ -21,7 +21,7 @@ final class DefaultAppCoordinator: AppCoordinator {
     }
     
     func start() {
-        let viewModel = PopularMoviesViewModel()
+        let viewModel = PopularMoviesListViewModel()
         viewModel.coordinator = self
         let viewController = MoviesListViewController(viewModel: viewModel)
         navigationController.setViewControllers([viewController], animated: false)

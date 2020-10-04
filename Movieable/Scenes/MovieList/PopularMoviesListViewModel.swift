@@ -1,5 +1,5 @@
 //
-//  PopularMoviesViewModel.swift
+//  PopularMoviesListViewModel.swift
 //  Movieable
 //
 //  Created by Duy Tran on 10/4/20.
@@ -8,7 +8,7 @@
 import Combine
 import Foundation
 
-final class PopularMoviesViewModel: MoviesListViewModel {
+final class PopularMoviesListViewModel: MoviesListViewModel {
     
     // MARK: - Dependencies
 

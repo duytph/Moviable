@@ -67,7 +67,7 @@ final class MoviesListViewController: UIViewController, MoviesListPresentable {
     // MARK: - Init
     
     init(
-        viewModel: MoviesListViewModel = PopularMoviesViewModel(),
+        viewModel: MoviesListViewModel = PopularMoviesListViewModel(),
         stateMachine: AnyStateMachine<[Movie]> = DefaultStateMachine().eraseToAnyStateMachine()) {
         self.viewModel = viewModel
         self.stateMachine = stateMachine
@@ -76,7 +76,7 @@ final class MoviesListViewController: UIViewController, MoviesListPresentable {
     }
     
     required init?(coder: NSCoder) {
-        self.viewModel = PopularMoviesViewModel()
+        self.viewModel = PopularMoviesListViewModel()
         self.stateMachine = DefaultStateMachine().eraseToAnyStateMachine()
         super.init(coder: coder)
         self.viewModel.presenter = self
