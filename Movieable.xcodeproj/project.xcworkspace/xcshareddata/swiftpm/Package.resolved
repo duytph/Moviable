@@ -1,0 +1,16 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "Networking",
+        "repositoryURL": "https://github.com/duytph/Networking.git",
+        "state": {
+          "branch": null,
+          "revision": "af6cba907107eda42c064fc099cb20787f796e06",
+          "version": "0.0.14"
+        }
+      }
+    ]
+  },
+  "version": 1
+}
