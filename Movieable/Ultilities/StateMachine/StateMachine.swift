@@ -18,6 +18,13 @@ protocol StateMachine {
         provider: StateMachineViewProvider)
 }
 
+extension StateMachine {
+    
+    func eraseToAnyStateMachine() -> AnyStateMachine<Item> {
+        AnyStateMachine(self)
+    }
+}
+
 struct DefaultStateMachine<Item: Emptiable>: StateMachine {
     
     init() {}
