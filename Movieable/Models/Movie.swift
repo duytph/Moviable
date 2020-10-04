@@ -20,6 +20,7 @@ struct Movie: Codable, Equatable, Hashable, Identifiable {
         case posterPath = "poster_path"
         case releaseDate = "release_date"
         case revenue, runtime
+        case spokenLanguages = "spoken_languages"
         case status, tagline, title, video
         case voteAverage = "vote_average"
         case voteCount = "vote_count"
@@ -36,14 +37,32 @@ struct Movie: Codable, Equatable, Hashable, Identifiable {
     let posterPath: String?
     let releaseDate: String?
     let revenue, runtime: Int?
+    let spokenLanguages: [SpokenLanguage]?
     let status, tagline, title: String?
     let video: Bool?
     let voteAverage: Double?
     let voteCount: Int?
 }
 
+extension Movie: Emptiable {
+    
+    var isEmpty: Bool {
+        id <= 0
+    }
+}
+
 struct Genre: Codable, Equatable, Hashable, Identifiable {
     
     let id: Int?
     let name: String?
+}
+
+struct SpokenLanguage: Codable, Equatable, Hashable {
+    
+    let identifier, name: String?
+
+    enum CodingKeys: String, CodingKey {
+        case identifier = "iso_639_1"
+        case name
+    }
 }
