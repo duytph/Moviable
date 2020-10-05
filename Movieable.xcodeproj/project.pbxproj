@@ -84,6 +84,7 @@
 		9695482425278C20009A67DE /* MovieableUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9695482325278C20009A67DE /* MovieableUITests.swift */; };
 		969BC5CE25289FFC00736D0F /* StateMachineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 969BC5CD25289FFC00736D0F /* StateMachineTests.swift */; };
 		969BC5D32528A04600736D0F /* SpyStateMachineViewProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 969BC5D22528A04600736D0F /* SpyStateMachineViewProvider.swift */; };
+		96A80B32252B856200191294 /* WKWebViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A80B31252B856200191294 /* WKWebViewControllerTests.swift */; };
 		96B6D6EC2528B170003CA4D7 /* StatefulViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B6D6EB2528B170003CA4D7 /* StatefulViewTests.swift */; };
 		96FA05C825298E1300C8D0A4 /* DefaultEndpointHeaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96FA05C725298E1300C8D0A4 /* DefaultEndpointHeaderTests.swift */; };
 		96FB947D252B6A7400520DEC /* MoviesListViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96FB947C252B6A7400520DEC /* MoviesListViewControllerTests.swift */; };
@@ -198,6 +199,7 @@
 		9695483D25278D38009A67DE /* Movieable.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = Movieable.xctestplan; sourceTree = "<group>"; };
 		969BC5CD25289FFC00736D0F /* StateMachineTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateMachineTests.swift; sourceTree = "<group>"; };
 		969BC5D22528A04600736D0F /* SpyStateMachineViewProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpyStateMachineViewProvider.swift; sourceTree = "<group>"; };
+		96A80B31252B856200191294 /* WKWebViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WKWebViewControllerTests.swift; sourceTree = "<group>"; };
 		96B6D6EB2528B170003CA4D7 /* StatefulViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatefulViewTests.swift; sourceTree = "<group>"; };
 		96FA05C725298E1300C8D0A4 /* DefaultEndpointHeaderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultEndpointHeaderTests.swift; sourceTree = "<group>"; };
 		96FB947C252B6A7400520DEC /* MoviesListViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesListViewControllerTests.swift; sourceTree = "<group>"; };
@@ -435,6 +437,7 @@
 				96B6D6EB2528B170003CA4D7 /* StatefulViewTests.swift */,
 				969BC5CD25289FFC00736D0F /* StateMachineTests.swift */,
 				968A803C2529A3A30033E412 /* Ultilities */,
+				96A80B31252B856200191294 /* WKWebViewControllerTests.swift */,
 			);
 			path = MovieableTests;
 			sourceTree = "<group>";
@@ -732,6 +735,7 @@
 				96FB94AF252B750200520DEC /* MovieDetailViewControllerTests.swift in Sources */,
 				9672059B252B43D700DB113E /* DefaultRemoteConfigRepositoryAPIEndpointTests.swift in Sources */,
 				960D8C8A2529D53800AA50F8 /* DefaultImageURLFactoryTests.swift in Sources */,
+				96A80B32252B856200191294 /* WKWebViewControllerTests.swift in Sources */,
 				968A80022529930B0033E412 /* StubEndpoint.swift in Sources */,
 				96FA05C825298E1300C8D0A4 /* DefaultEndpointHeaderTests.swift in Sources */,
 				96FB9490252B6B2300520DEC /* SpyStateMachine.swift in Sources */,
