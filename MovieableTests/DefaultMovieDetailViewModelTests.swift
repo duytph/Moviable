@@ -12,6 +12,7 @@ import XCTest
 final class DefaultMovieDetailViewModelTests: XCTestCase {
 
     var presenter: SpyMovieDetailPresentable!
+    var coordinator:  SpyMovieDetailCoordinator!
     var movieRepository: SpyMovieRepository!
     var bookingURL: URL!
     var movie: Movie!
@@ -19,6 +20,7 @@ final class DefaultMovieDetailViewModelTests: XCTestCase {
     
     override func setUpWithError() throws {
         presenter = SpyMovieDetailPresentable()
+        coordinator = SpyMovieDetailCoordinator()
         movieRepository = SpyMovieRepository()
         movieRepository.stubbedMovieResult = Empty().eraseToAnyPublisher()
         bookingURL = URL(string: "https://9gag.com")!
@@ -28,10 +30,12 @@ final class DefaultMovieDetailViewModelTests: XCTestCase {
             bookingURL: bookingURL,
             movie: movie)
         sut.presenter = presenter
+        sut.coordinator = coordinator
     }
 
     override func tearDownWithError() throws {
         presenter = nil
+        coordinator = nil
         movieRepository = nil
         bookingURL = nil
         movie = nil
@@ -40,6 +44,7 @@ final class DefaultMovieDetailViewModelTests: XCTestCase {
     
     func testInit() throws {
         XCTAssertTrue(sut.presenter  === presenter)
+        XCTAssertTrue(sut.coordinator === coordinator)
         XCTAssertTrue(sut.movieRepository as! SpyMovieRepository === movieRepository)
         XCTAssertEqual(sut.bookingURL, bookingURL)
         XCTAssertEqual(sut.state, .loaded(movie))
@@ -48,9 +53,15 @@ final class DefaultMovieDetailViewModelTests: XCTestCase {
     func testViewDidLoad() {
         sut.viewDidLoad()
         
-        XCTAssertEqual(presenter.title, movie.title)
+        XCTAssertTrue(presenter.invokedTitleSetter)
         XCTAssertTrue(movieRepository.invokedMovie)
         XCTAssertEqual(movieRepository.invokedMovieParameters?.id, movie.id)
+    }
+    
+    func testBookButtonDidTap() {
+        sut.bookButtonDidTap()
+        XCTAssertTrue(coordinator.invokedOpen)
+        XCTAssertEqual(coordinator.invokedOpenParameters?.url, bookingURL)
     }
     
     func testFetchMovieFailed() {
