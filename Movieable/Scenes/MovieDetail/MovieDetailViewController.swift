@@ -116,7 +116,7 @@ final class MovieDetailViewController: UIViewController, MovieDetailPresentable 
     
     // MARK: - Private
     
-    @IBAction func buttonButtonDidTap(_ sender: Any) {
+    @IBAction func bookButtonDidTap(_ sender: Any) {
         viewModel.bookButtonDidTap()
     }
 }
