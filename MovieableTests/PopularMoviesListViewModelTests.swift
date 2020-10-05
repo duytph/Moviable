@@ -12,6 +12,7 @@ import XCTest
 final class PopularMoviesListViewModelTests: XCTestCase {
     
     var presenter: SpyMoviesListPresentable!
+    var coordinator: SpyMovieListCoordinator!
     var movieRepository: SpyMovieRepository!
     var title: String!
     var movie: Movie!
@@ -20,6 +21,7 @@ final class PopularMoviesListViewModelTests: XCTestCase {
 
     override func setUpWithError() throws {
         presenter = SpyMoviesListPresentable()
+        coordinator = SpyMovieListCoordinator()
         movieRepository = SpyMovieRepository()
         movieRepository.stubbedPopularResult = Empty().eraseToAnyPublisher()
         title = "Foo"
@@ -32,10 +34,12 @@ final class PopularMoviesListViewModelTests: XCTestCase {
             title: title,
             movies: movies)
         sut.presenter = presenter
+        sut.coordinator = coordinator
     }
     
     override func tearDownWithError() throws {
         presenter = nil
+        coordinator = nil
         movieRepository = nil
         title = nil
         movie = nil
@@ -44,6 +48,8 @@ final class PopularMoviesListViewModelTests: XCTestCase {
     }
     
     func testInit() throws {
+        XCTAssertTrue(sut.presenter === presenter)
+        XCTAssertTrue(sut.coordinator === coordinator)
         XCTAssertTrue(sut.movieRepository as! SpyMovieRepository === movieRepository)
         XCTAssertEqual(sut.title, title)
         XCTAssertEqual(sut.state, .loaded(movies))
@@ -67,7 +73,13 @@ final class PopularMoviesListViewModelTests: XCTestCase {
         XCTAssertEqual(movieRepository.invokedPopularParameters?.page, 1)
     }
     
-    func testFetch() {
+    func testDidSelectMovie() throws {
+        sut.didSelect(movie: movie)
+        XCTAssertTrue(coordinator.invokedRouteToMovieDetail)
+        XCTAssertEqual(coordinator.invokedRouteToMovieDetailParameters?.movie, movie)
+    }
+    
+    func testFetch() throws {
         let response = PaginationResponse(
             page: 1,
             totalResults: 1,

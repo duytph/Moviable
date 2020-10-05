@@ -116,9 +116,9 @@ final class MoviesListViewController: UIViewController, MoviesListPresentable {
         refreshControl.endRefreshing()
     }
     
-    // MARK: - Private
+    // MARK: - Actions
     
-    @objc private func refreshControlDidChangeValue(sender: UIRefreshControl) {
+    @objc func refreshControlDidChangeValue(sender: UIRefreshControl) {
         viewModel.refresh()
     }
 }

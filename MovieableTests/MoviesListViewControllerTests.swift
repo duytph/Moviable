@@ -59,10 +59,36 @@ final class MoviesListViewControllerTests: XCTestCase {
         }
     }
     
-    func testEndRefreshing() {
+    func testEndRefreshing() throws {
         sut.refreshControl.beginRefreshing()
         XCTAssertTrue(sut.refreshControl.isRefreshing)
         sut.endRefreshing()
         XCTAssertFalse(sut.refreshControl.isRefreshing)
+    }
+    
+    func testRefreshControlDidChangeValue() throws {
+        sut.refreshControlDidChangeValue(sender: sut.refreshControl)
+        XCTAssertTrue(viewModel.invokedRefresh)
+    }
+    
+    func testScrollViewDidScroll() throws {
+        let scrollView = UIScrollView()
+        scrollView.contentSize = CGSize(width: 100, height: 100)
+        scrollView.setContentOffset(CGPoint(x: 0, y: 100), animated: false)
+        sut.scrollViewDidScroll(scrollView)
+        XCTAssertTrue(viewModel.invokedLoadMore)
+    }
+    
+    func testDidSelect() throws {
+        let indexPath = IndexPath(row: 0, section: 0)
+        sut.present(state: .loaded([movie]))
+        sut.tableView(sut.tableView, didSelectRowAt: indexPath)
+        XCTAssertTrue(viewModel.invokedDidSelect)
+    }
+    
+    func testDidSelectWhenMoviesIsEmpty() throws {
+        let indexPath = IndexPath(row: 0, section: 0)
+        sut.tableView(sut.tableView, didSelectRowAt: indexPath)
+        XCTAssertFalse(viewModel.invokedDidSelect)
     }
 }
