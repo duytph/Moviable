@@ -25,6 +25,8 @@ struct ResponseErrorMiddleware: Middleware {
     func didReceive(response: URLResponse, data: Data) throws {
         if let responseError = try? decoder.decode(ResponseError.self, from: data) {
             throw responseError
+        } else if let paginationResponseError = try? decoder.decode(PaginationResponseError.self, from: data) {
+            throw paginationResponseError
         }
     }
 }

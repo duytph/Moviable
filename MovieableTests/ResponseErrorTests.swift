@@ -10,37 +10,20 @@ import XCTest
 
 final class ResponseErrorTests: XCTestCase {
 
-    var statusCode: Int!
     var statusMessage: String!
     var sut: ResponseError!
     
     override func setUpWithError() throws {
-        statusCode = 0
         statusMessage = "Foo"
-        sut = ResponseError(
-            statusCode: statusCode,
-            statusMessage: statusMessage)
+        sut = ResponseError(statusMessage: statusMessage)
     }
 
     override func tearDownWithError() throws {
-        statusCode = nil
         statusMessage = nil
         sut = nil
     }
     
     func testErrorDescription() throws {
         XCTAssertEqual(sut.errorDescription, statusMessage)
-    }
-    
-    func testFailureReason() throws {
-        XCTAssertEqual(sut.failureReason, statusMessage)
-    }
-    
-    func testRecoverySuggestion() throws {
-        XCTAssertEqual(sut.recoverySuggestion, statusMessage)
-    }
-    
-    func testHelpAnchor() throws {
-        XCTAssertEqual(sut.helpAnchor, String(statusCode!))
     }
 }

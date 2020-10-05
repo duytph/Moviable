@@ -19,9 +19,7 @@ final class ResponseErrorMiddlewareTests: XCTestCase {
     var sut: ResponseErrorMiddleware!
     
     override func setUpWithError() throws {
-        responseError = ResponseError(
-            statusCode: 0,
-            statusMessage: "Foo")
+        responseError = ResponseError(statusMessage: "Foo")
         url = URL(string: "https://www.apple.com")
         request = URLRequest(url: url)
         response = HTTPURLResponse(
