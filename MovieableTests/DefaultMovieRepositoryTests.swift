@@ -12,8 +12,6 @@ import Networking
 
 final class DefaultMovieRepositoryTests: XCTestCase {
     
-    var popularRawJSON: String!
-    var movieRawJSON: String!
     var url: URL!
     var request: URLRequest!
     var response: HTTPURLResponse!
@@ -26,19 +24,6 @@ final class DefaultMovieRepositoryTests: XCTestCase {
     var sut: DefaultMovieRepository!
 
     override func setUpWithError() throws {
-        popularRawJSON = """
-        {
-          "page": 1,
-          "total_results": 10000,
-          "total_pages": 500,
-          "results": [
-            {
-              "id": 1
-            }
-          ]
-        }
-        """
-        movieRawJSON = #"{ "id": 677638 }"#
         url = URL(string: "https://www.apple.com")
         request = URLRequest(url: url)
         response = HTTPURLResponse(
@@ -46,7 +31,7 @@ final class DefaultMovieRepositoryTests: XCTestCase {
             statusCode: 200,
             httpVersion: nil,
             headerFields: nil)
-        data = "{}".data(using: .utf8)
+        data = #"{ "foo": "bar" }"#.data(using: .utf8)
         error = StubError()
         requestFactory = SpyURLRequestFactory()
         requestFactory.stubbedMakeResult = request
@@ -60,13 +45,11 @@ final class DefaultMovieRepositoryTests: XCTestCase {
             middlewares: middlewares,
             session: session)
         
-        session.set(stubbedData: data, for: request)
         session.set(stubbedResponse: response, for: request)
     }
 
     override func tearDownWithError() throws {
-        popularRawJSON = nil
-        movieRawJSON = nil
+        session.tearDown()
         url = nil
         request = nil
         response = nil
@@ -107,7 +90,7 @@ final class DefaultMovieRepositoryTests: XCTestCase {
                 case .finished:
                     XCTFail(expectation.description)
                 }
-            }) { (response: PaginationResponse<Movie>) in
+            }) { (_) in
                 XCTFail(expectation.description)
             }
             .store(in: &cancelBag)
@@ -129,7 +112,7 @@ final class DefaultMovieRepositoryTests: XCTestCase {
                 case .finished:
                     XCTFail(expectation.description)
                 }
-            }) { (response: PaginationResponse<Movie>) in
+            }) { (_) in
                 XCTFail(expectation.description)
             }
             .store(in: &cancelBag)
@@ -138,9 +121,38 @@ final class DefaultMovieRepositoryTests: XCTestCase {
     }
     
     func testPopular() throws {
-        data = popularRawJSON.data(using: .utf8)
-        session.set(stubbedData: data, for: request)
         let expectation = self.expectation(description: "Expect receiving data")
+        let data = """
+        {
+          "page": 1,
+          "total_results": 1,
+          "total_pages": 1,
+          "results": [
+            {
+              "poster_path": "/e1mjopzAS2KNsvpbpahQ1a6SkSn.jpg",
+              "adult": false,
+              "overview": "From DC Comics comes the Suicide Squad, an antihero team of incarcerated supervillains who act as deniable assets for the United States government, undertaking high-risk black ops missions in exchange for commuted prison sentences.",
+              "release_date": "2016-08-03",
+              "genre_ids": [
+                14,
+                28,
+                80
+              ],
+              "id": 297761,
+              "original_title": "Suicide Squad",
+              "original_language": "en",
+              "title": "Suicide Squad",
+              "backdrop_path": "/ndlQ2Cuc3cjTL7lTynw6I4boP4S.jpg",
+              "popularity": 48.261451,
+              "vote_count": 1466,
+              "video": false,
+              "vote_average": 5.91
+            }
+          ]
+        }
+        """
+            .data(using: .utf8)
+        session.set(stubbedData: data, for: request)
         
         sut
             .popular(page: 0)
@@ -151,11 +163,11 @@ final class DefaultMovieRepositoryTests: XCTestCase {
                 case .finished:
                     break
                 }
-            }) { (response: PaginationResponse<Movie>) in
+            }) { (_) in
                 expectation.fulfill()
             }
             .store(in: &cancelBag)
-        
+
         wait(for: [expectation], timeout: 0.5)
     }
     
@@ -203,9 +215,25 @@ final class DefaultMovieRepositoryTests: XCTestCase {
     }
     
     func testMovie() throws {
-        data = movieRawJSON.data(using: .utf8)!
-        session.set(stubbedData: data, for: request)
         let expectation = self.expectation(description: "Expect receiving data")
+        let data = """
+        {
+          "adult": false,
+          "backdrop_path": "/fCayJrkfRaCRCTh8GqN30f8oyQF.jpg",
+          "belongs_to_collection": null,
+          "budget": 63000000,
+          "genres": [
+            {
+              "id": 18,
+              "name": "Drama"
+            }
+          ],
+          "homepage": "",
+          "id": 550,
+        }
+        """
+            .data(using: .utf8)
+        session.set(stubbedData: data, for: request)
         
         sut
             .movie(id: 0)
@@ -220,7 +248,7 @@ final class DefaultMovieRepositoryTests: XCTestCase {
                 expectation.fulfill()
             }
             .store(in: &cancelBag)
-        
+
         wait(for: [expectation], timeout: 0.5)
     }
 }
