@@ -58,7 +58,10 @@ final class DefaultMovieDetailViewModel: MovieDetailViewModel {
     
     func bookButtonDidTap() {
         guard let bookingURL = self.bookingURL else { return }
-        coordinator?.open(url: bookingURL)
+        coordinator?.open(
+            url: bookingURL,
+            animated: true,
+            completion: nil)
     }
     
     // MARK: - Public

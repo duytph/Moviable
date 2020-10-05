@@ -9,15 +9,24 @@ import UIKit
 
 protocol MovieDetailCoordinator: Coordinator {
 
-    func open(url: URL)
+    func open(
+        url: URL,
+        animated: Bool,
+        completion: (() -> Void)?)
 }
 
 extension MovieDetailCoordinator {
     
-    func open(url: URL) {
+    func open(
+        url: URL,
+        animated: Bool,
+        completion: (() -> Void)?) {
         let request = URLRequest(url: url)
         let viewController = WKWebViewController(request: request)
         let webNavigationController = UINavigationController(rootViewController: viewController)
-        navigationController.present(webNavigationController, animated: true, completion: nil)
+        navigationController.present(
+            webNavigationController,
+            animated: animated,
+            completion: completion)
     }
 }
