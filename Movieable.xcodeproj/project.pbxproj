@@ -90,6 +90,8 @@
 		96FB9482252B6A9400520DEC /* SpyMoviesListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96FB9481252B6A9400520DEC /* SpyMoviesListViewModel.swift */; };
 		96FB9490252B6B2300520DEC /* SpyStateMachine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96FB948F252B6B2300520DEC /* SpyStateMachine.swift */; };
 		96FB9495252B6F7200520DEC /* Movie+Mock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96FB9494252B6F7200520DEC /* Movie+Mock.swift */; };
+		96FB949A252B719100520DEC /* DefaultMovieDetailViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96FB9499252B719100520DEC /* DefaultMovieDetailViewModelTests.swift */; };
+		96FB94A2252B722B00520DEC /* SpyMovieDetailPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96FB94A1252B722B00520DEC /* SpyMovieDetailPresentable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -197,6 +199,8 @@
 		96FB9481252B6A9400520DEC /* SpyMoviesListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpyMoviesListViewModel.swift; sourceTree = "<group>"; };
 		96FB948F252B6B2300520DEC /* SpyStateMachine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpyStateMachine.swift; sourceTree = "<group>"; };
 		96FB9494252B6F7200520DEC /* Movie+Mock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Movie+Mock.swift"; sourceTree = "<group>"; };
+		96FB9499252B719100520DEC /* DefaultMovieDetailViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultMovieDetailViewModelTests.swift; sourceTree = "<group>"; };
+		96FB94A1252B722B00520DEC /* SpyMovieDetailPresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpyMovieDetailPresentable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -289,6 +293,7 @@
 				96720588252B402700DB113E /* MockMovieDetailCoordinator.swift */,
 				96FB9481252B6A9400520DEC /* SpyMoviesListViewModel.swift */,
 				96FB948F252B6B2300520DEC /* SpyStateMachine.swift */,
+				96FB94A1252B722B00520DEC /* SpyMovieDetailPresentable.swift */,
 			);
 			path = " TestDouble";
 			sourceTree = "<group>";
@@ -414,6 +419,7 @@
 				96B6D6EB2528B170003CA4D7 /* StatefulViewTests.swift */,
 				969BC5CD25289FFC00736D0F /* StateMachineTests.swift */,
 				968A803C2529A3A30033E412 /* Ultilities */,
+				96FB9499252B719100520DEC /* DefaultMovieDetailViewModelTests.swift */,
 			);
 			path = MovieableTests;
 			sourceTree = "<group>";
@@ -703,6 +709,7 @@
 				9678FADC2528590400ADB3A5 /* StubError.swift in Sources */,
 				967205A3252B49C000DB113E /* MovieTableViewCellTests.swift in Sources */,
 				961510B6252A5FD9009C2C11 /* SpyMoviesListPresentable.swift in Sources */,
+				96FB949A252B719100520DEC /* DefaultMovieDetailViewModelTests.swift in Sources */,
 				968A802625299F0B0033E412 /* DefaultMovieRepositoryTests.swift in Sources */,
 				9672059B252B43D700DB113E /* DefaultRemoteConfigRepositoryAPIEndpointTests.swift in Sources */,
 				960D8C8A2529D53800AA50F8 /* DefaultImageURLFactoryTests.swift in Sources */,
@@ -719,6 +726,7 @@
 				969BC5CE25289FFC00736D0F /* StateMachineTests.swift in Sources */,
 				968A801425299B5C0033E412 /* DefaultAuthorizationMiddlewareTests.swift in Sources */,
 				968A80382529A3770033E412 /* URLSession+Stubbed.swift in Sources */,
+				96FB94A2252B722B00520DEC /* SpyMovieDetailPresentable.swift in Sources */,
 				968A800A2529939C0033E412 /* DefaultURLRequestFactoryTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
