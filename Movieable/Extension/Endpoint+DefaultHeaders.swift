@@ -6,9 +6,9 @@
 //
 
 import Foundation
-import Networking
+import Networkable
 
-extension Networking.Endpoint {
+extension Networkable.Endpoint {
     
     var headers: [String: String]? {
         [

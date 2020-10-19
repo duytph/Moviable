@@ -6,7 +6,7 @@
 //
 
 import Foundation
-import Networking
+import Networkable
 
 final class SpyURLRequestFactory: URLRequestFactory {
     

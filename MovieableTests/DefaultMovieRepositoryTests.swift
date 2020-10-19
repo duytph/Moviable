@@ -7,7 +7,7 @@
 
 import Combine
 import XCTest
-import Networking
+import Networkable
 @testable import Movieable
 
 final class DefaultMovieRepositoryTests: XCTestCase {

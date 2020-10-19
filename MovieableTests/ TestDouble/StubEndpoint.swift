@@ -6,16 +6,16 @@
 //
 
 import Foundation
-import Networking
+import Networkable
 @testable import Movieable
 
-final class StubEndpoint: Networking.Endpoint {
+final class StubEndpoint: Networkable.Endpoint {
     
     var stubPath: String!
     var path: String { stubPath }
     
-    var stubMethod: Networking.Method!
-    var method: Networking.Method { stubMethod }
+    var stubMethod: Networkable.Method!
+    var method: Networkable.Method { stubMethod }
     
     var stubBody: Data!
     func body() throws -> Data? { stubBody }

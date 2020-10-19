@@ -26,7 +26,6 @@
 		962401A9252A0D37009E92AD /* PopularMoviesListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 962401A8252A0D37009E92AD /* PopularMoviesListViewModel.swift */; };
 		962401B1252A1895009E92AD /* ResponseErrorMiddleware.swift in Sources */ = {isa = PBXBuildFile; fileRef = 962401B0252A1895009E92AD /* ResponseErrorMiddleware.swift */; };
 		962401B6252A18A7009E92AD /* ResponseError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 962401B5252A18A7009E92AD /* ResponseError.swift */; };
-		962853CC2529076C008E9A50 /* Networking in Frameworks */ = {isa = PBXBuildFile; productRef = 962853CB2529076C008E9A50 /* Networking */; };
 		962853D225290799008E9A50 /* Middleware+DefaultValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 962853D125290799008E9A50 /* Middleware+DefaultValue.swift */; };
 		962853DA2529097A008E9A50 /* LocalizationMiddleware.swift in Sources */ = {isa = PBXBuildFile; fileRef = 962853D92529097A008E9A50 /* LocalizationMiddleware.swift */; };
 		9637C13A252A1E6C00D94855 /* ResponseErrorMiddlewareTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9637C139252A1E6C00D94855 /* ResponseErrorMiddlewareTests.swift */; };
@@ -88,6 +87,7 @@
 		96A80B42252B8C4200191294 /* PaginationResponseErrorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A80B41252B8C4200191294 /* PaginationResponseErrorTests.swift */; };
 		96A80B47252B8D7B00191294 /* PaginationResponseError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A80B46252B8D7B00191294 /* PaginationResponseError.swift */; };
 		96B6D6EC2528B170003CA4D7 /* StatefulViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B6D6EB2528B170003CA4D7 /* StatefulViewTests.swift */; };
+		96F0A237253D730200C7F22C /* Networkable in Frameworks */ = {isa = PBXBuildFile; productRef = 96F0A236253D730200C7F22C /* Networkable */; };
 		96FA05C825298E1300C8D0A4 /* DefaultEndpointHeaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96FA05C725298E1300C8D0A4 /* DefaultEndpointHeaderTests.swift */; };
 		96FB947D252B6A7400520DEC /* MoviesListViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96FB947C252B6A7400520DEC /* MoviesListViewControllerTests.swift */; };
 		96FB9482252B6A9400520DEC /* SpyMoviesListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96FB9481252B6A9400520DEC /* SpyMoviesListViewModel.swift */; };
@@ -225,7 +225,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				960D8C6C2529C7BA00AA50F8 /* Kingfisher in Frameworks */,
-				962853CC2529076C008E9A50 /* Networking in Frameworks */,
+				96F0A237253D730200C7F22C /* Networkable in Frameworks */,
 				968A806C2529B6860033E412 /* Reusable in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -505,9 +505,9 @@
 			);
 			name = Movieable;
 			packageProductDependencies = (
-				962853CB2529076C008E9A50 /* Networking */,
 				968A806B2529B6860033E412 /* Reusable */,
 				960D8C6B2529C7BA00AA50F8 /* Kingfisher */,
+				96F0A236253D730200C7F22C /* Networkable */,
 			);
 			productName = Movieable;
 			productReference = 969547FE25278C1F009A67DE /* Movieable.app */;
@@ -581,9 +581,9 @@
 			);
 			mainGroup = 969547F525278C1F009A67DE;
 			packageReferences = (
-				962853CA2529076C008E9A50 /* XCRemoteSwiftPackageReference "Networking" */,
 				968A806A2529B6860033E412 /* XCRemoteSwiftPackageReference "Reusable" */,
 				960D8C6A2529C7BA00AA50F8 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				96F0A235253D730200C7F22C /* XCRemoteSwiftPackageReference "Networkable" */,
 			);
 			productRefGroup = 969547FF25278C1F009A67DE /* Products */;
 			projectDirPath = "";
@@ -1096,20 +1096,20 @@
 				minimumVersion = 5.15.5;
 			};
 		};
-		962853CA2529076C008E9A50 /* XCRemoteSwiftPackageReference "Networking" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/duytph/Networking.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 0.0.14;
-			};
-		};
 		968A806A2529B6860033E412 /* XCRemoteSwiftPackageReference "Reusable" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/AliSoftware/Reusable.git";
 			requirement = {
 				kind = upToNextMajorVersion;
 				minimumVersion = 4.1.1;
+			};
+		};
+		96F0A235253D730200C7F22C /* XCRemoteSwiftPackageReference "Networkable" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/duytph/Networkable.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
@@ -1120,15 +1120,15 @@
 			package = 960D8C6A2529C7BA00AA50F8 /* XCRemoteSwiftPackageReference "Kingfisher" */;
 			productName = Kingfisher;
 		};
-		962853CB2529076C008E9A50 /* Networking */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 962853CA2529076C008E9A50 /* XCRemoteSwiftPackageReference "Networking" */;
-			productName = Networking;
-		};
 		968A806B2529B6860033E412 /* Reusable */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 968A806A2529B6860033E412 /* XCRemoteSwiftPackageReference "Reusable" */;
 			productName = Reusable;
+		};
+		96F0A236253D730200C7F22C /* Networkable */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 96F0A235253D730200C7F22C /* XCRemoteSwiftPackageReference "Networkable" */;
+			productName = Networkable;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

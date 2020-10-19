@@ -6,11 +6,11 @@
 //
 
 import Foundation
-import Networking
+import Networkable
 
-extension Networking.DefaultURLRequestFactory {
+extension Networkable.DefaultURLRequestFactory {
     
     static var defaultValue: URLRequestFactory {
-        Networking.DefaultURLRequestFactory(host: Natrium.Config.baseURL)
+        Networkable.DefaultURLRequestFactory(baseURL: Natrium.Config.baseURL)
     }
 }

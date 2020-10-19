@@ -6,11 +6,11 @@
 //
 
 import Foundation
-import Networking
+import Networkable
 
-extension Array where Element == Networking.Middleware {
+extension Array where Element == Networkable.Middleware {
     
-    static var defaultValue: [Networking.Middleware] {
+    static var defaultValue: [Networkable.Middleware] {
         [
             DefaultLoggingMiddleware(),
             LocalizationMiddleware(),

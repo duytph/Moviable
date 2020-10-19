@@ -7,7 +7,7 @@
 
 import Combine
 import Foundation
-import Networking
+import Networkable
 
 protocol MovieRepository {
     
@@ -50,7 +50,7 @@ struct DefaultMovieRepository: MovieRepository, Repository {
 
 extension DefaultMovieRepository {
     
-    enum APIEndpoint: Networking.Endpoint {
+    enum APIEndpoint: Networkable.Endpoint {
         
         case popular(page: Int)
         case movie(id: Int)
@@ -64,7 +64,7 @@ extension DefaultMovieRepository {
             }
         }
         
-        var method: Networking.Method {
+        var method: Networkable.Method {
             .get
         }
         

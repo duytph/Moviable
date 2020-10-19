@@ -6,13 +6,13 @@
 //
 
 import Foundation
-import Networking
+import Networkable
 
-extension Networking.DefaultAuthorizationMiddleware {
+extension Networkable.DefaultAuthorizationMiddleware {
     
     static var defaultValue: Self {
-        Networking.DefaultAuthorizationMiddleware { () -> Networking.AuthorizationType in
-            Networking.DefaultAuthorizationType(
+        Networkable.DefaultAuthorizationMiddleware { () -> Networkable.AuthorizationType in
+            Networkable.DefaultAuthorizationType(
                 key: "api_key",
                 value: Natrium.Config.apiKey,
                 place: .query)

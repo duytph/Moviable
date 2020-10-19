@@ -11,12 +11,12 @@
         }
       },
       {
-        "package": "Networking",
-        "repositoryURL": "https://github.com/duytph/Networking.git",
+        "package": "Networkable",
+        "repositoryURL": "https://github.com/duytph/Networkable.git",
         "state": {
           "branch": null,
-          "revision": "a682d2a8ad63d04ff286ba02788bd9dc5bf60338",
-          "version": "0.0.15"
+          "revision": "53cad8da06e8c5c440fb4e616caf7664ae47f551",
+          "version": "1.0.0"
         }
       },
       {

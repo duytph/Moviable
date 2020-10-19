@@ -7,7 +7,7 @@
 
 import Combine
 import Foundation
-import Networking
+import Networkable
 import os.log
 
 protocol RemoteConfigRepository {
@@ -80,7 +80,7 @@ extension DefaultRemoteConfigRepository {
             "/configuration"
         }
         
-        var method: Networking.Method {
+        var method: Networkable.Method {
             .get
         }
         

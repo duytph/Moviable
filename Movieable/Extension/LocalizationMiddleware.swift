@@ -6,9 +6,9 @@
 //
 
 import Foundation
-import Networking
+import Networkable
 
-struct LocalizationMiddleware: Networking.Middleware {
+struct LocalizationMiddleware: Networkable.Middleware {
     
     let locale: Locale
     let languageKey: String

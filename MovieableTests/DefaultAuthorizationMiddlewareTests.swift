@@ -6,7 +6,7 @@
 //
 
 import XCTest
-import Networking
+import Networkable
 @testable import Movieable
 
 final class DefaultAuthorizationMiddlewareTests: XCTestCase {
