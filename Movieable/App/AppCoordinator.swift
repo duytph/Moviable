@@ -28,6 +28,8 @@ final class DefaultAppCoordinator: AppCoordinator {
         window.rootViewController = navigationController
         window.makeKeyAndVisible()
     }
+    
+    func stop() {}
 }
 
 extension DefaultAppCoordinator: MovieListCoordinator {}
