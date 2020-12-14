@@ -11,6 +11,7 @@ import Networkable
 extension Networkable.DefaultURLRequestFactory {
     
     static var defaultValue: URLRequestFactory {
-        Networkable.DefaultURLRequestFactory(baseURL: Natrium.Config.baseURL)
+        print(Natrium.Config.baseURL)
+        return DefaultURLRequestFactory(baseURL: URL(string: Natrium.Config.baseURL))
     }
 }

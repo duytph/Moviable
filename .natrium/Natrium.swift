@@ -23,6 +23,7 @@ enum Natrium {
         static let environment: Environment = .development
 
         static let apiKey: String = "c03c5a1d4bde7b5bd689c351d71a3bdb"
-        static let baseURL: String = "https://api.themoviedb.org/3"
+        static let apiVersion: Int = 3
+        static let baseURL: String = "https://api.themoviedb.org/"
     }
 }

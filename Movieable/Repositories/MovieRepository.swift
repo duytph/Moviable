@@ -1,5 +1,5 @@
 //
-//  MovieRepository.swift
+//  MovieWebRepository.swift
 //  Movieable
 //
 //  Created by Duy Tran on 10/3/20.
@@ -15,9 +15,9 @@ protocol MovieRepository {
     func movie(id: Int) -> AnyPublisher<Movie, Error>
 }
 
-struct DefaultMovieRepository: MovieRepository, Repository {
+struct DefaultMovieWebRepository: MovieRepository, WebRepository {
     
-    static let shared = DefaultMovieRepository()
+    static let shared = DefaultMovieWebRepository()
     
     // MARK: - Dependencies
     
@@ -48,20 +48,22 @@ struct DefaultMovieRepository: MovieRepository, Repository {
     }
 }
 
-extension DefaultMovieRepository {
+extension DefaultMovieWebRepository {
     
     enum APIEndpoint: Networkable.Endpoint {
         
         case popular(page: Int)
         case movie(id: Int)
         
-        var path: String {
+        var url: String {
+            var url = "/\(Natrium.Config.apiVersion)"
             switch self {
             case let .popular(page):
-                return "/movie/popular?page=\(page)"
+                url += "/movie/popular?page=\(page)"
             case let .movie(id):
-                return "/movie/\(id)"
+                url += "/movie/\(id)"
             }
+            return url
         }
         
         var method: Networkable.Method {

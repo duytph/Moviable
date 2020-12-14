@@ -24,7 +24,7 @@ final class PopularMoviesListViewModel: MoviesListViewModel {
     private var totalPages: Int = 1
     
     init(
-        movieRepository: MovieRepository = DefaultMovieRepository.shared,
+        movieRepository: MovieRepository = DefaultMovieWebRepository.shared,
         title: String = NSLocalizedString("Popular", comment: ""),
         movies: [Movie] = []) {
         self.movieRepository = movieRepository

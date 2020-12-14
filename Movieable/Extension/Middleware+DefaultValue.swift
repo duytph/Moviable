@@ -12,11 +12,11 @@ extension Array where Element == Networkable.Middleware {
     
     static var defaultValue: [Networkable.Middleware] {
         [
-            DefaultLoggingMiddleware(),
+            LoggingMiddleware(),
             LocalizationMiddleware(),
-            DefaultAuthorizationMiddleware.defaultValue,
+            AuthorizationMiddleware.defaultValue,
             ResponseErrorMiddleware(),
-            DefaultCodeValidationMiddleware(),
+            StatusCodeValidationMiddleware(),
         ]
     }
 }

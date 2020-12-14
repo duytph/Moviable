@@ -42,7 +42,7 @@ final class DefaultImageURLFactory: ImageURLFactory {
     
     init(
         images: Images = .defaultValue,
-        remoteConfigRepository: RemoteConfigRepository = DefaultRemoteConfigRepository.shared) {
+        remoteConfigRepository: RemoteConfigRepository = DefaultRemoteConfigWebRepository.shared) {
         self.images = images
         remoteConfigRepository
             .configurationPublisher

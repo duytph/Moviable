@@ -18,9 +18,9 @@ protocol RemoteConfigRepository {
     func refresh()
 }
 
-final class DefaultRemoteConfigRepository: RemoteConfigRepository, Repository {
+final class DefaultRemoteConfigWebRepository: RemoteConfigRepository, WebRepository {
 
-    static let shared = DefaultRemoteConfigRepository()
+    static let shared = DefaultRemoteConfigWebRepository()
     
     // MARK: - Dependencies
     
@@ -70,14 +70,14 @@ final class DefaultRemoteConfigRepository: RemoteConfigRepository, Repository {
     }
 }
 
-extension DefaultRemoteConfigRepository {
+extension DefaultRemoteConfigWebRepository {
     
     enum APIEndpoint: Endpoint {
         
         case configuration
         
-        var path: String {
-            "/configuration"
+        var url: String {
+            "/\(Natrium.Config.apiVersion)/configuration"
         }
         
         var method: Networkable.Method {

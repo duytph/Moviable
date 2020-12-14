@@ -30,7 +30,7 @@ final class DefaultMovieDetailViewModel: MovieDetailViewModel {
     // MARK: - Init
     
     init(
-        movieRepository: MovieRepository = DefaultMovieRepository.shared,
+        movieRepository: MovieRepository = DefaultMovieWebRepository.shared,
         bookingURL: URL? = URL(string: "https://www.cathaycineplexes.com.sg/"),
         movie: Movie) {
         self.movieRepository = movieRepository
